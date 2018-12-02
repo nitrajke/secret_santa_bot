@@ -92,7 +92,7 @@ def process_update(update):
 			elif text == '/reset@TayniyDedBot':
 				groups.pop(chat_id)
 			elif text == '/play@TayniyDedBot':
-				if (groups[splited_text[1]]['members_count'] - len(groups['members'])) == 0:
+				if (groups[chat_id]['members_count'] - len(groups[chat_id]['members'])) == 0:
 					tgbot.send_message(chat_id, '*играет_новогодняя_мелодия*')
 					play(chat_id)
 				else:
