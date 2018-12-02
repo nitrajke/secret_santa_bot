@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #
 import tgbot
+import random
 from time import sleep
 
 timeout = 3
