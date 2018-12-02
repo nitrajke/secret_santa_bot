@@ -71,7 +71,7 @@ def process_update(update):
 						groups[splited_text[1]]['members'][chat_id]['username'] = update['message']['from']['username']
 					except:
 						groups[splited_text[1]]['members'][chat_id]['username'] = ''
-					vacancies_count = groups[splited_text[1]]['members_count'] - len(groups['members'])
+					vacancies_count = groups[splited_text[1]]['members_count'] - len(groups[splited_text[1]]['members'])
 					msg = groups[splited_text[1]]['members'][chat_id]['first_name'] + ' ' + groups[splited_text[1]]['members'][chat_id]['last_name'] + ' участвует. Осталось мест: ' + vacancies_count
 					tgbot.send_message(splited_text[1], msg)
 				else:
