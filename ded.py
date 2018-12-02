@@ -50,9 +50,9 @@ def play(chat_id):
 	send_results(chat_id)
 
 def process_update(update):
-	
+
 	if 'message' in update:
-		chat_id = update['message']['chat']['id']
+		chat_id = str(update['message']['chat']['id'])
 		text = update['message']['text']
 
 		if update['message']['chat']['type'] == 'private':
