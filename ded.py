@@ -105,7 +105,7 @@ def check_updates():
 	response = tgbot.get_updates_json(offset=last_update)['result']
 	for update in response:
 		if update['update_id'] >= last_update:
-			last_update = update['update_id']
+			last_update = update['update_id'] + 1
 			print(last_update)
 			process_update(update)
 
