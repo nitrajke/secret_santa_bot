@@ -11,11 +11,8 @@ groups = { }
 
 def send_results(group_id):
 	for player in groups[group_id]['members']:
-		text = 'Дари подарок этому человеку: ' + str(player['first_name'])
-		text = text + ' '
-		text = text + str(player['last_name'])
-		text = text + '!'
-		chat_id = player['secret_santa_chat_id']
+		text = 'Дари подарок этому человеку: ' + groups[group_id]['members'][player]['first_name'] + ' ' + groups[group_id]['members'][player]['last_name'] + '!'
+		chat_id = groups[group_id]['members'][player]['secret_santa_chat_id']
 		tgbot.send_message(chat_id, text)
 
 def play(chat_id):
