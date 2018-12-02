@@ -5,7 +5,7 @@ timeout = 10
 answer = 0
 
 def log(response):
-	fname = str(answer) + '.html'
+	fname = './log/' + str(answer) + '.html'
 	f = open(fname, 'w')
 	f.write(response.text)
 	f.close()
