@@ -5,6 +5,7 @@ timeout = 10
 answer = 0
 
 def log(response):
+	global answer
 	fname = './log/' + str(answer) + '.html'
 	f = open(fname, 'w')
 	f.write(response.text)
@@ -12,7 +13,6 @@ def log(response):
 	answer += 1
 
 def get_updates_json(offset=None):
-	global answer
 	params = {'timeout': timeout, 'offset': offset}
 	response = requests.get(url + 'getUpdates', data=params)
 	log(response)
