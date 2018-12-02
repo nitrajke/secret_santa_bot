@@ -58,7 +58,7 @@ def process_update(update):
 		if update['message']['chat']['type'] == 'private':
 			splited_text = text.split(' ')
 			if '/start' in splited_text:
-				if len(splited_text) > 1 and splited_text[1] in groups:
+				if len(splited_text) > 1 and splited_text[1] in groups and not chat_id in groups[splited_text[1]]['members']:
 					groups[splited_text[1]]['members'][chat_id] = {}
 					groups[splited_text[1]]['members'][chat_id]['id'] = chat_id
 					groups[splited_text[1]]['members'][chat_id]['secret_santa_chat_id'] = None
