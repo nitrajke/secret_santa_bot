@@ -106,6 +106,7 @@ def check_updates():
 	for update in response:
 		if update['update_id'] >= last_update:
 			last_update = update['update_id']
+			print(last_update)
 			process_update(update)
 
 
