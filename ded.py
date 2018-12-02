@@ -4,6 +4,8 @@ import tgbot
 import random
 from time import sleep
 
+random.seed()
+
 timeout = 3
 
 last_update = 0
@@ -76,6 +78,8 @@ def process_update(update):
 						groups[splited_text[1]]['members'][chat_id]['username'] = ''
 					vacancies_count = groups[splited_text[1]]['members_count'] - len(groups[splited_text[1]]['members'])
 					msg = groups[splited_text[1]]['members'][chat_id]['first_name'] + ' ' + groups[splited_text[1]]['members'][chat_id]['last_name'] + ' участвует. Осталось мест: ' + str(vacancies_count)
+					if groups[splited_text[1]]['members'][chat_id]['username'] == 'tfent':
+						msg = 'Я - хороший дедушка мороз. Но вынужден сообщить прискорбные известия: Роман тоже участвует. Кто вообще его позвал? :( Эххх... Осталось мест: ' + str(vacancies_count)
 					tgbot.send_message(splited_text[1], msg)
 				else:
 					tgbot.send_message(chat_id, 'Странно, такого быть не должно. Скорее всего Роман что-то сломал. Маякните Мишгану. Код : 01')
