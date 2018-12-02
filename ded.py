@@ -61,7 +61,7 @@ def process_update(update):
 				if len(splited_text) > 1 and splited_text[1] in groups:
 					groups[splited_text[1]]['members'][chat_id] = {}
 					groups[splited_text[1]]['members'][chat_id]['id'] = chat_id
-					groups[cplited_text[1]]['members'][chat_id]['secret_santa_chat_id'] = None
+					groups[splited_text[1]]['members'][chat_id]['secret_santa_chat_id'] = None
 					groups[splited_text[1]]['members'][chat_id]['first_name'] = update['message']['from']['first_name']
 					try:
 						groups[splited_text[1]]['members'][chat_id]['last_name'] = update['message']['from']['last_name']
