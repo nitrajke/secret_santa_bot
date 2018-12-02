@@ -51,7 +51,7 @@ def play(chat_id):
 
 def process_update(update):
 
-	if 'message' in update:
+	if 'message' in update and 'text' in update['message']:
 		chat_id = str(update['message']['chat']['id'])
 		text = update['message']['text']
 
