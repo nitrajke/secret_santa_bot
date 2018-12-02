@@ -89,9 +89,9 @@ def process_update(update):
 				groups[chat_id]['members'] = {}
 				click_url = 'https://t.me/TayniyDedBot?start=' + chat_id
 				tgbot.send_message(chat_id, 'Кликните ссылку и в открывшемся чате нажмите start. ' + click_url)
-			elif text == '/reset@TayniyDedBot':
+			elif text == '/reset@TayniyDedBot' and chat_id in groups:
 				groups.pop(chat_id)
-			elif text == '/play@TayniyDedBot':
+			elif text == '/play@TayniyDedBot' and chat_id in groups:
 				if (groups[chat_id]['members_count'] - len(groups[chat_id]['members'])) == 0:
 					tgbot.send_message(chat_id, '*играет_новогодняя_мелодия*')
 					play(chat_id)
