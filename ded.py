@@ -32,7 +32,7 @@ def play(chat_id):
 					break
 			elif free_santas[1] in free_victims:
 				if free_santas[1] == free_victims[0]:
-					players[free_santas[0]] = free_pvictims[0]
+					players[free_santas[0]] = free_victims[0]
 					players[free_santas[1]] = free_victims[1]
 					break
 				else:
