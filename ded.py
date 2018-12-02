@@ -1,5 +1,7 @@
 import tgbot
 
+a = 123
+
 last_update = 0
 
 def process_update(update):
