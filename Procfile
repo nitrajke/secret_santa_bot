@@ -1,1 +1,1 @@
-python ded.py
+worker: python ded.py
